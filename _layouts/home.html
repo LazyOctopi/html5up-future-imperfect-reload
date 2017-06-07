@@ -1,0 +1,39 @@
+---
+layout: index
+---
+
+
+<!-- Post -->
+<ul class="alt">
+{% for post in site.posts %}
+  <li>
+    {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
+
+    <article class="post">
+      <header>
+        <div class="title">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+          <p>{{ post.subtitle }}</p>
+        </div>
+        <div class="meta">
+          <time class="published" datetime="{{ post.date | date: date_format }}">{{ post.date | date: date_format }}</time>
+          <a href="#" class="icon {{ post.icon }}"></a>
+        </div>
+      </header>
+      <a href="#" class="image featured"><img src="images/pic02.png" alt="" /></a>
+      <p>{{ post.excerpt }}</p>
+      <footer>
+        <ul class="actions">
+          <li><a href="#" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+          <li><a href="#">General</a></li>
+          <li><a href="#" class="icon fa-heart">28</a></li>
+          <li><a href="#" class="icon fa-comment">128</a></li>
+        </ul>
+      </footer>
+    </article>
+
+  </li>
+{% endfor %}
+</ul>
