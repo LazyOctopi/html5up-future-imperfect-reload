@@ -18,3 +18,6 @@ image_root: /images/
 markdown: kramdown
 sass:
   sass_dir: /assets/sass
+
+gems:
+  - jekyll-archives
